@@ -11,8 +11,12 @@
 </head>
 <body>
     <header>
-        <button class="help-button"><i class="bi bi-question-circle"></i></button>
+        <!-- Botón de ayuda, con el atributo data-bs-toggle para abrir el modal -->
+        <button class="help-button" data-bs-toggle="modal" data-bs-target="#helpModal">
+            <i class="bi bi-question-circle"></i>
+        </button>
     </header>
+    
     <main>
         <div class="container">
             <div class="header">
@@ -21,6 +25,28 @@
             <button class="start-button">COMENZAR</button>
         </div>
     </main>
-    
+
+    <!-- Modal de ayuda -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="helpModalLabel">Ayuda</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>¿Cómo puedo añadir una nueva frase a una categoría?</li>
+                        <li>¿Cómo modifico o elimino frases que ya no necesito?</li>
+                        <li>¿Puedo crear mis propias categorías?</li>
+                        <li>¿Cómo activar la opción de reproducción de voz en frases?</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
