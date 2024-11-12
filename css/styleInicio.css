@@ -1,4 +1,3 @@
-
 .navbar {
     position: relative;
 }
@@ -21,47 +20,83 @@
     font-size: 4rem;
     background-color: transparent;
 }
+
 .btn-large {
-    padding: 3rem 10rem; 
-    font-size: 8rem;   
+    padding: 3rem 10rem;
+    font-size: 8rem;
 }
-.mensaje-bienvenida{
+
+.mensaje-bienvenida {
     font-size: 3rem;
 }
-.mt-6{
+
+.mt-6 {
     margin-top: 6rem !important;
 }
-.mt-7{
+
+.mt-7 {
     margin-top: 12rem !important;
 }
-.card-size{
+
+.card-size {
     width: 32rem;
 }
+
+.size-categoria {
+    width: 100%;
+    height: 7rem;
+}
+
+.size-icono {
+    font-size: 1.6rem;
+}
+.img-icono {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover; 
+}
+
 @media (max-width: 600px) {
     .navbar-text {
         position: relative;
-        top: 12rem; 
+        top: 12rem;
     }
+
     .navbar-btn {
-        position: static; 
+        position: static;
         display: block;
-        margin: 0 auto 10px; 
+        margin: 0 auto 10px;
     }
+
     .btn-large {
-        padding: 2rem 4rem; 
-        font-size: 3rem; 
-          
+        padding: 2rem 4rem;
+        font-size: 3rem;
+
     }
-    .mensaje-bienvenida{
+
+    .mensaje-bienvenida {
         font-size: 1.5rem;
     }
-    .mt-6{
+
+    .mt-6 {
         margin-top: 5rem !important;
     }
-    .mt-7{
+    
+    .mt-7 {
         margin-top: 6rem !important;
     }
-    .card-size{
+    
+    .card-size {
         width: 20rem;
+    }
+
+    .size-categoria {
+        width: 100%;
+        height: 8rem;
+    }
+
+    .alinear-icono {
+        display: flex;
+        justify-content: center;
     }
 }
