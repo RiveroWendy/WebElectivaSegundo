@@ -21,15 +21,47 @@
     font-size: 4rem;
     background-color: transparent;
 }
-
+.btn-large {
+    padding: 3rem 10rem; 
+    font-size: 8rem;   
+}
+.mensaje-bienvenida{
+    font-size: 3rem;
+}
+.mt-6{
+    margin-top: 6rem !important;
+}
+.mt-7{
+    margin-top: 12rem !important;
+}
+.card-size{
+    width: 32rem;
+}
 @media (max-width: 600px) {
     .navbar-text {
         position: relative;
-        top: 9rem; 
+        top: 12rem; 
     }
     .navbar-btn {
         position: static; 
         display: block;
         margin: 0 auto 10px; 
+    }
+    .btn-large {
+        padding: 2rem 4rem; 
+        font-size: 3rem; 
+          
+    }
+    .mensaje-bienvenida{
+        font-size: 1.5rem;
+    }
+    .mt-6{
+        margin-top: 5rem !important;
+    }
+    .mt-7{
+        margin-top: 6rem !important;
+    }
+    .card-size{
+        width: 20rem;
     }
 }
