@@ -50,6 +50,14 @@
 .size-icono {
     font-size: 1.6rem;
 }
+
+.size-icono-mediano {
+    font-size: 2.6rem;
+}
+
+.size-icono-grande {
+    font-size: 4rem;
+}
 .img-icono {
     width: 3rem;
     height: 3rem;
