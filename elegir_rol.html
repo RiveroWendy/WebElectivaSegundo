@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/deffda3fd9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styleInicio.css">
 </head>
@@ -19,30 +20,28 @@
     <nav class="navbar navbar-expand-lg position-relative">
         <div class="container-fluid">
             <h1 class="navbar-text mx-auto mensaje-bienvenida mt-4">Mensajes Rápidos</h1>
-            <button class="navbar-btn btn" data-bs-toggle="modal" data-bs-target="#helpModal">
-                <i class="bi bi-gear-fill"></i>
+            <button class="navbar-btn btn" data-bs-toggle="modal" data-bs-target="#configModal">
+                <i class="fa-solid fa-gear"></i>
             </button>
         </div>
     </nav>
 
-
     <main>
         <div class="container mt-6">
-            <div class="row g-5" style="text-align: -webkit-center;">
+            <div class="row g-5 text-center">
                 <div class="col">
                     <a href="categorias_usuario.html" class="text-decoration-none">
                         <div class="card card-size">
                             <h2 class="card-title">Usuario</h2>
-                            <img src="img/usuario.png" class="card-img-top" alt="Opcion de Usuario">
+                            <img src="img/usuario.png" class="card-img-top" alt="Opción de Usuario">
                         </div>
                     </a>
-
                 </div>
                 <div class="col">
                     <a href="categorias_creador.html" class="text-decoration-none">
                         <div class="card card-size">
                             <h2 class="card-title">Creador</h2>
-                            <img src="img/usuario.png" class="card-img-top" alt="Opcion de Creador">
+                            <img src="img/usuario.png" class="card-img-top" alt="Opción de Creador">
                         </div>
                     </a>
                 </div>
@@ -50,6 +49,62 @@
         </div>
     </main>
 
+    <!-- Modal de Configuración -->
+    <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="configModalLabel">Configuración</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Fuente de Letra -->
+                    <div class="mb-3">
+                        <label for="fontSelect" class="form-label">Fuente de Letra</label>
+                        <select id="fontSelect" class="form-select">
+                            <option value="Arial">Arial</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                        </select>
+                    </div>
+
+                    <!-- Tamaño de Letra -->
+                    <div class="mb-3">
+                        <label for="fontSizeSelect" class="form-label">Tamaño de Letra</label>
+                        <select id="fontSizeSelect" class="form-select">
+                            <option value="small">Pequeño</option>
+                            <option value="medium">Mediano</option>
+                            <option value="large">Grande</option>
+                        </select>
+                    </div>
+
+                    <!-- Tipo de Voz -->
+                    <div class="mb-3">
+                        <label for="voiceSelect" class="form-label">Tipo de Voz</label>
+                        <select id="voiceSelect" class="form-select">
+                            <option value="voz1">Voz 1</option>
+                            <option value="voz2">Voz 2</option>
+                            <option value="voz3">Voz 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Contraste -->
+                    <div class="mb-3">
+                        <label for="contrastSelect" class="form-label">Contraste</label>
+                        <select id="contrastSelect" class="form-select">
+                            <option value="light">Claro</option>
+                            <option value="dark">Oscuro</option>
+                            <option value="high-contrast">Alto Contraste</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

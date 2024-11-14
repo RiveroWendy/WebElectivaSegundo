@@ -22,12 +22,13 @@
 }
 
 .btn-large {
-    padding: 3rem 10rem;
-    font-size: 8rem;
+    padding: 1rem 5rem;
+    font-size: 5rem;
 }
 
 .mensaje-bienvenida {
     font-size: 3rem;
+    
 }
 
 .mt-6 {
@@ -61,9 +62,15 @@
 .img-icono {
     width: 3rem;
     height: 3rem;
+    filter: invert(1);
     object-fit: cover; 
 }
-
+.imagen-bienvenida{
+    width: 12rem;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; 
+}
 @media (max-width: 600px) {
     .navbar-text {
         position: relative;
@@ -84,6 +91,8 @@
 
     .mensaje-bienvenida {
         font-size: 1.5rem;
+        display: block;
+        top: -0.5rem;
     }
 
     .mt-6 {
@@ -107,4 +116,11 @@
         display: flex;
         justify-content: center;
     }
+    .imagen-bienvenida {
+        width: 10rem;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto; 
+    }
+    
 }
