@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
             agregarFrase(frase, frasesContainer);
         });
     }
+    
+    const loadVoices = () => {
+        voices = speechSynthesis.getVoices();
 
     function agregarFrase(frase, frasesContainer) {
         const seccionFrase = document.createElement('section');
@@ -50,38 +53,50 @@ document.addEventListener('DOMContentLoaded', function() {
         const fraseP = document.createElement('p');
         const divIcono = document.createElement('div');
         const iconoParlante = document.createElement('i');
-
-        seccionFrase.classList.add("btn", "btn-primary", "size-categoria", "d-flex", "flex-column", "flex-md-row", "justify-content-between", "p-3", "align-items-md-center", "mt-2");
-        divFrase.classList.add("d-flex", "align-items-center");
-
-        fraseP.classList.add("h3", "frase");
-        fraseP.textContent = frase;
-
-        divIcono.classList.add("m-2", "size-icono-grande", "d-flex", "justify-content-md-end", "alinear-icono");
-        iconoParlante.classList.add("bi", "bi-volume-up-fill");
-
-        seccionFrase.appendChild(divFrase);
-        divFrase.appendChild(fraseP);
-        seccionFrase.appendChild(divIcono);
-        divIcono.appendChild(iconoParlante);
-        frasesContainer.appendChild(seccionFrase);
+    // Obtener la configuración de voz guardada en localStorage
+    const savedConfig = JSON.parse(localStorage.getItem("speechConfig"));
+    let voices = [];
 
 
-        iconoParlante.addEventListener('click', function() {
-            const textoFrase = fraseP.textContent;
-            const synth = window.speechSynthesis;
+            seccionFrase.classList.add("btn", "btn-primary", "size-categoria", "d-flex", "flex-column", "flex-md-row", "justify-content-between", "p-3", "align-items-md-center", "mt-2");
+            divFrase.classList.add("d-flex", "align-items-center");
 
-            if (synth.speaking) {
-                synth.cancel(); 
-            }
-            
-            if (textoFrase !== '') {
-                const utterance = new SpeechSynthesisUtterance(textoFrase);
-                synth.speak(utterance); 
-            }
-        });
+            fraseP.classList.add("h3", "frase");
+            fraseP.textContent = frase;
+
+            divIcono.classList.add("m-2", "size-icono-grande", "d-flex", "justify-content-md-end", "alinear-icono");
+            iconoParlante.classList.add("bi", "bi-volume-up-fill");
+
+            seccionFrase.appendChild(divFrase);
+            divFrase.appendChild(fraseP);
+            seccionFrase.appendChild(divIcono);
+            divIcono.appendChild(iconoParlante);
+            frasesContainer.appendChild(seccionFrase);
+
+            iconoParlante.addEventListener('click', function() {
+                const textoFrase = fraseP.textContent;
+                const synth = window.speechSynthesis;
+
+                if (synth.speaking) {
+                    synth.cancel(); 
+                }
+
+                if (textoFrase !== '') {
+                    const utterance = new SpeechSynthesisUtterance(textoFrase);
+
+                    // Aplicar la configuración guardada
+                    if (savedConfig) {
+                        utterance.voice = voices[savedConfig.voiceIndex];
+                        utterance.rate = parseFloat(savedConfig.speed);
+                    }
+                    
+                    synth.speak(utterance); 
+                }
+            });
+        }
+    
     }
-
+    
     const buscarFraseBtn = document.getElementById('buscar-frase');
     const inputBusqueda = document.getElementById('input-busqueda');
 
@@ -116,5 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function normalizeString(str) {
         return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    };
+
+    // Cargar voces y aplicar configuración
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    } else {
+        loadVoices();
     }
 });

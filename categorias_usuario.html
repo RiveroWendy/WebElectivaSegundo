@@ -10,48 +10,51 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styleInicio.css">
+    <link rel="stylesheet" href="css/globals.css">
     <script src="js/categorias.js" defer></script>
     <script src="https://kit.fontawesome.com/deffda3fd9.js" crossorigin="anonymous"></script>
+    <script src="js/previsualizar.js" defer></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg position-relative">
         <div class="container-fluid">
+            <button class="navbar-btn-volver btn" onclick="window.location.href='elegir_rol.html'">
+                <i class="bi bi-arrow-left-circle"></i>
+            </button>
             <h1 class="navbar-text mx-auto mensaje-bienvenida mt-3">Categorias<br>(selecciona una categoria para ver tus
                 frases o agregar una)</h1>
-            <button class="navbar-btn btn" onclick="window.location.href='añadir_categoria.html'">
-                <i class="fa-solid fa-plus"></i>
-            </button>
         </div>
     </nav>
     <main>
         <div class="container-fluid mt-6">
             <section class="btn btn-primary size-categoria d-flex flex-column flex-md-row justify-content-between p-3 align-items-md-center" onclick="seleccionarCategoria('Saludos y despedidas')">
                 <div class="d-flex align-items-center">
-                    <img src="img/saludos-despedidas.png" alt="Imagen" class="img-icono me-3">
+                    <img src="img/saludos-despedidas.png" alt="Imagen Despedidas" class="img-icono me-3">
                     <h3>Saludos y despedidas</h3>
                 </div>
             </section>
             <section class="btn btn-primary size-categoria d-flex flex-column flex-md-row justify-content-between p-3 align-items-md-center mt-2" onclick="seleccionarCategoria('Preguntas')">
                 <div class="d-flex align-items-center">
-                    <img src="img/icone-question.png" alt="Imagen" class="img-icono me-3">
+                    <img src="img/icone-question.png" alt="Imagen Preguntas" class="img-icono me-3">
                     <h3>Preguntas</h3>
                 </div>
             </section>
             <section class="btn btn-primary size-categoria d-flex flex-column flex-md-row justify-content-between p-3 align-items-md-center mt-2" onclick="seleccionarCategoria('Respuestas rapidas')">
                 <div class="d-flex align-items-center">
-                    <img src="img/respuestas-rapidas.png" alt="Imagen" class="img-icono me-3">
+                    <img src="img/respuestas-rapidas.png" alt="Imagen Respuestas Rapidas" class="img-icono me-3">
                     <h3>Respuestas rapidas</h3>
                 </div>
             </section>
             <section class="btn btn-primary size-categoria d-flex flex-column flex-md-row justify-content-between p-3 align-items-md-center mt-2" onclick="seleccionarCategoria('Social')">
                 <div class="d-flex align-items-center">
-                    <img src="img/grupo-de-usuarios.png" alt="Imagen" class="img-icono me-3">
+                    <img src="img/grupo-de-usuarios.png" alt="Imagen Social" class="img-icono me-3">
                     <h3>Social</h3>
                 </div>
             </section>
             <section class="btn btn-primary size-categoria d-flex flex-column flex-md-row justify-content-between p-3 align-items-md-center mt-2" onclick="seleccionarCategoria('Tareas y proyectos')">
                 <div class="d-flex align-items-center">
-                    <img src="img/tareas.png" alt="Imagen" class="img-icono me-3">
+                    <img src="img/tareas.png" alt="Imagen Tareas Cotidianas" class="img-icono me-3">
                     <h3>Tareas cotidianas</h3>
                 </div>
             </section>
