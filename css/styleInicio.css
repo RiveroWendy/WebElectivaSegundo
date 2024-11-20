@@ -36,7 +36,7 @@
 }
 
 .mensaje-bienvenida {
-    font-size: 3rem;
+    font-size: 3em;
     
 }
 
@@ -101,7 +101,7 @@
     }
 
     .mensaje-bienvenida {
-        font-size: 1.5rem;
+        font-size: 1.5em;
         display: block;
         top: -0.5rem;
     }
@@ -135,7 +135,6 @@
     
 }
 #previewText {
-    font-family: "Project Sans Light", sans-serif;
     font-size: 16px;
     margin-top: 20px;
     border: 1px solid #000;
