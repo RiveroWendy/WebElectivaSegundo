@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const guardarEdicion = document.createElement('button');
             guardarEdicion.classList.add("btn","btn-outline-light","boton-guardar","size-icono-mediano");
-            guardarEdicion.innerHTML = "<i class='bi bi-check-circle'></i>";
+            guardarEdicion.innerHTML = "<i class='fa-solid fa-check'></i>";
             divFrase.appendChild(guardarEdicion);
 
             guardarEdicion.addEventListener('click', function() {
