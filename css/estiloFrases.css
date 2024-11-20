@@ -1,0 +1,29 @@
+.input-frase
+{
+    background-color: transparent;
+    border: solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#input-busqueda
+{
+    font-size: 25px;
+}
+
+.boton-guardar
+{
+    border: none !important;
+}
+
+.boton-guardar:hover
+{
+    background-color: transparent;
+    color: white;
+}
+
+.boton-guardar:active
+{
+    background-color: transparent !important;
+    color: white !important;
+}

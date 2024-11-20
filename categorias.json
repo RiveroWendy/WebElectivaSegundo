@@ -1,0 +1,26 @@
+{
+    "Saludos y despedidas": [
+        "Hola",
+        "Adiós",
+        "Buenos días",
+        "Buenas noches"
+    ],
+    "Preguntas": [
+        "¿Cómo estás?",
+        "¿Qué tal?",
+        "¿Qué haces?"
+    ],
+    "Respuestas rápidas": [
+        "Sí",
+        "No",
+        "Tal vez",
+        "Perfecto"
+    ],
+    "Social": [
+        "Podemos hablar más tarde",
+        "¿Te gustaría hablar en este momento?"
+    ],
+    "Tareas y proyectos": [
+        "Voy a empezar con mis tareas"
+    ]
+}

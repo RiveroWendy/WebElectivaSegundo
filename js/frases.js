@@ -3,18 +3,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const tituloCat = document.getElementById('nombre-categoria');
     tituloCat.textContent = nombreCat;
 
-    const frases = {
+/*     const frases = {
         "Saludos y despedidas": ["Hola", "Adiós", "Buenos días", "Buenas noches"],
         "Preguntas": ["¿Cómo estás?", "¿Qué tal?", "¿Qué haces?"],
         "Respuestas rapidas": ["Sí", "No", "Tal vez", "Perfecto"],
         "Social": ["Podemos hablar más tarde", "¿Te gustaría hablar en este momento?"],
         "Tareas y proyectos": ["Voy a empezar con mis tareas"]
     };
+ */
+    let frasesCategoria = [];
 
-    const frasesContainer = document.getElementById('frases-container');
-    const frasesCategoria = frases[nombreCat];
+    
+    const datosLocales = localStorage.getItem(nombreCat);
+    if (datosLocales) {
+        frasesCategoria = JSON.parse(datosLocales);
+        renderFrases(frasesCategoria);
+    } else {
+        
+        fetch("categorias.json")
+            .then(response => response.json())
+            .then(data => {
+                if (data[nombreCat]) {
+                    frasesCategoria = data[nombreCat];
+                    localStorage.setItem(nombreCat, JSON.stringify(frasesCategoria)); 
+                    renderFrases(frasesCategoria);
+                } else {
+                    console.error('Categoría no encontrada en el JSON');
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar el archivo JSON:', error);
+            });
+    }
 
-    frasesCategoria.forEach(frase => {
+    function renderFrases(frases) {
+        const frasesContainer = document.getElementById('frases-container');
+        frasesContainer.innerHTML = '';
+        frases.forEach(frase => {
+            agregarFrase(frase, frasesContainer);
+        });
+    }
+
+    function agregarFrase(frase, frasesContainer) {
         const seccionFrase = document.createElement('section');
         const divFrase = document.createElement('div');
         const fraseP = document.createElement('p');
@@ -50,5 +80,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 synth.speak(utterance); 
             }
         });
+    }
+
+    const buscarFraseBtn = document.getElementById('buscar-frase');
+    const inputBusqueda = document.getElementById('input-busqueda');
+
+    inputBusqueda.addEventListener("keydown", function(e) {
+        if(e.key === "Enter")
+        {
+            const ingreso = inputBusqueda.value.trim().toLowerCase();
+            const ingresoNormalizado = normalizeString(ingreso);
+    
+            if (ingreso) {
+                const frasesFiltradas = frasesCategoria.filter(frase => normalizeString(frase).includes(ingresoNormalizado));
+                renderFrases(frasesFiltradas); 
+            } else {
+                renderFrases(frasesCategoria); 
+            }
+        }
     });
+
+    buscarFraseBtn.addEventListener('click', function() {
+        const inputBusqueda = document.getElementById('input-busqueda');
+        const ingreso = inputBusqueda.value.trim().toLowerCase();
+
+        const ingresoNormalizado = normalizeString(ingreso);
+
+        if (ingreso) {
+            const frasesFiltradas = frasesCategoria.filter(frase => normalizeString(frase).includes(ingresoNormalizado));
+            renderFrases(frasesFiltradas); 
+        } else {
+            renderFrases(frasesCategoria); 
+        }
+    });
+
+    function normalizeString(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
 });
