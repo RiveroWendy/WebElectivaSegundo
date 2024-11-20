@@ -80,6 +80,9 @@
     margin: 0 auto; 
 }
 @media (max-width: 600px) {
+    .d-flex {
+        flex-direction: column-reverse !important; 
+    }
     .navbar-text {
         position: relative;
         top: 12rem;
@@ -92,7 +95,7 @@
     }
 
     .btn-large {
-        padding: 2rem 4rem;
+        padding: 2rem 0.3rem;
         font-size: 3rem;
 
     }
@@ -125,8 +128,7 @@
         justify-content: center;
     }
     .imagen-bienvenida {
-        width: 10rem;
-        border-radius: 50%;
+        width: 15rem;
         display: block;
         margin: 0 auto; 
     }
