@@ -6,7 +6,6 @@
     font-size: 1.5em;
     text-align: center;
     width: 100%;
-    font-family: "Comic Sans MS", sans-serif;
     color: #333;
 }
 
@@ -20,9 +19,19 @@
     font-size: 4rem;
     background-color: transparent;
 }
+.navbar-btn-volver {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 1.5em;
+    color: #333;
+    border: none;
+    font-size: 4rem;
+    background-color: transparent;
+}
 
 .btn-large {
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
     font-size: 5rem;
 }
 
@@ -66,8 +75,7 @@
     object-fit: cover; 
 }
 .imagen-bienvenida{
-    width: 12rem;
-    border-radius: 50%;
+    width: 40rem;
     display: block;
     margin: 0 auto; 
 }
@@ -125,7 +133,7 @@
     
 }
 #previewText {
-    font-family: "Comic Sans MS", sans-serif;
+    font-family: "Project Sans Light", sans-serif;
     font-size: 16px;
     margin-top: 20px;
     border: 1px solid #000;
