@@ -1,9 +1,9 @@
 .input-frase
 {
-    background-color: transparent;
-    border: solid white;
-    border-radius: 10px;
-    padding: 10px;
+    background-color: transparent !important;
+    border: solid white !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
 }
 
 #input-busqueda

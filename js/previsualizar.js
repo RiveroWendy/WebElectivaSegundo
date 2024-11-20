@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewText = document.getElementById("previewText");
     const body = document.body;
     const saveButton = document.getElementById("btn-guardar");
+    const contrastSelect = document.getElementById("contrastSelect"); 
 
-    // Función para guardar las configuraciones en localStorage
+
     const saveFontConfig = () => {
         const fontConfig = {
             fontFamily: fontSelect.value,
@@ -14,16 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("fontConfig", JSON.stringify(fontConfig));
     };
 
+    const saveContrastConfig = () => {
+        const contrastConfig = contrastSelect.value;
+        localStorage.setItem("contrastConfig", contrastConfig);
+    };
+
     // Función para cargar las configuraciones desde localStorage
     const loadFontConfig = () => {
-        console.log(localStorage.getItem("fontConfig"));
         const savedConfig = JSON.parse(localStorage.getItem("fontConfig"));
         if (savedConfig) {
             // Aplicar configuraciones al cuerpo del documento
             body.style.fontFamily = savedConfig.fontFamily;
             body.style.fontSize = getFontSizeInPixels(savedConfig.fontSize);
 
-            // Preseleccionar las opciones en el modal (si existen los elementos)
             if (fontSelect) fontSelect.value = savedConfig.fontFamily;
             if (fontSizeSelect) fontSizeSelect.value = savedConfig.fontSize;
 
@@ -32,6 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 previewText.style.fontFamily = savedConfig.fontFamily;
                 previewText.style.fontSize = getFontSizeInPixels(savedConfig.fontSize);
             }
+        }
+    };
+
+    const loadContrastConfig = () => {
+        const savedContrastConfig = localStorage.getItem("contrastConfig");
+        if (savedContrastConfig) {
+            document.documentElement.setAttribute("data-theme", savedContrastConfig);
+            if (contrastSelect) contrastSelect.value = savedContrastConfig;
         }
     };
 
@@ -49,11 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-     // Verificar si los elementos de configuración existen antes de asignar eventos
-     if (saveButton) {
+    const saveConfig = () => {
+        saveFontConfig();
+        saveContrastConfig();
+    };
+
+    if (saveButton) {
         saveButton.addEventListener("click", () => {
-            saveFontConfig();
-            loadFontConfig();
+            saveConfig();
         });
     }
 
@@ -73,4 +88,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cargar configuraciones guardadas al iniciar la página
     loadFontConfig();
+    loadContrastConfig();
+
+    if (contrastSelect) {
+        contrastSelect.addEventListener("change", () => {
+            const selectedTheme = contrastSelect.value;
+            if (selectedTheme === "" || selectedTheme === "light") {
+                document.documentElement.removeAttribute("data-theme");
+            } else {
+                document.documentElement.setAttribute("data-theme", selectedTheme); 
+            }
+            saveConfig(); 
+        });
+    }
 });

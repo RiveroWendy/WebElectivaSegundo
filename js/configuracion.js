@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const voiceSelect = document.getElementById("voiceSelect");
     const voiceSpeed = document.getElementById("voiceSpeed");
     const testConfigBtn = document.getElementById("testConfigBtn");
+    const selectConstraste = document.getElementById("contrastSelect");
 
     // Array para almacenar las voces disponibles
     let voices = [];
@@ -53,4 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         localStorage.setItem("speechConfig", JSON.stringify(config));
     });
+
+    // CONSTRASTE
+    selectConstraste.addEventListener("change", function() {
+        const selectedContrast = selectConstraste.value;
+
+        localStorage.setItem("contrastConfig", selectedContrast);
+
+        if (selectedContrast === "" || selectedContrast === "light") {
+            document.documentElement.removeAttribute("data-theme");
+        } else if (selectedContrast === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else if (selectedContrast === "high-contrast") {
+            document.documentElement.setAttribute("data-theme", "high-contrast");
+        }
+    });
+
+
 });

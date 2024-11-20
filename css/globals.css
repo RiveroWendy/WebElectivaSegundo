@@ -1,0 +1,126 @@
+/* Modo Claro */
+:root {
+    --color-fondo: #ffffff;
+    --color-texto-principal: #000000;
+    --color-texto-secundario: #333;
+    --color-fondo-elementos: #F5F5F5;
+    --color-fondo-div: #0d6efd;
+    --color-icono:  #212121;
+    --color-bordes: #212121;
+    --color-enlaces: #2600ff;
+    --color-hover: #F5F5F5;
+}
+
+  /* Modo Oscuro */
+[data-theme="dark"] {
+    --color-fondo: #121212;
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #B3B3B3;
+    --color-fondo-elementos: #1E1E1E;
+    --color-fondo-div: #0d6efd;
+    --color-icono:  #E0E0E0;
+    --color-bordes: #333333;
+    --color-enlaces: #2600ff;
+    --color-hover: #1E1E1E;
+}
+
+  /* Modo Alto Contraste */
+[data-theme="high-contrast"] {
+    --color-fondo: #000000;
+    --color-texto-principal: #FFFF00;
+    --color-texto-secundario: #000000;
+    --color-fondo-elementos: #18d0ff;
+    --color-fondo-div: #18d0ff;
+    --color-icono:  #FFFF00;
+    --color-bordes: #FFFF00;
+    --color-enlaces: #FFFFFF;
+    --color-hover: #FFFF00;
+}
+
+
+body {
+    background-color: var(--color-fondo)  !important;
+    color: var(--color-texto-principal) !important;
+}
+
+/* .btn-primary {
+    background-color: var(--color-fondo-div)  !important;
+    color: var(--color-texto-principal) !important;
+} */
+
+
+h1,h2,h3,h4
+{
+    color: var(--color-texto-principal) !important;
+}
+
+
+button {
+/*  background-color: var(--color-fondo-elementos) !important; */
+/*     border-radius: 10px;
+    color: var(--color-texto-principal) !important;
+*/
+    cursor: pointer;  
+}
+
+
+/* button:hover
+{
+    background-color: var(--color-hover) !important; 
+    border-radius: 10px;
+    color: var(--color-texto-secundario) !important;
+    cursor: pointer; 
+
+} */
+
+input
+{
+    background-color: var(--color-fondo-principal)  !important;
+    color: var(--color-texto-hover) !important;
+    border: 1px solid var(--color-bordes) !important;
+}
+
+input::placeholder
+{
+    color: var(--color-texto-hover) !important;
+}
+
+
+.card{
+    background-color: var(--color-fondo)  !important;
+    border: 1px solid var(--color-bordes) !important;
+}
+
+.card-title{
+    color: var(--color-texto-principal) !important;
+}
+
+.card-header{
+    color: var(--color-texto-principal) !important;
+}
+
+label
+{
+    color: var(--color-texto-principal) !important;
+}
+
+.modal-content
+{
+    background-color: var(--color-fondo)  !important;
+    color: var(--color-texto-principal) !important;
+    border: 1px solid var(--color-bordes) !important;
+}
+
+.dropdown-menu
+{
+    background-color: var(--color-fondo)  !important;
+    color: var(--color-texto-principal) !important;
+    border: 1px solid var(--color-bordes) !important;
+}
+
+select
+{
+    background-color: var(--color-fondo-elementos)  !important;
+    color: var(--color-texto-secundario) !important;
+    border: 2px solid var(--color-bordes) !important;
+}
