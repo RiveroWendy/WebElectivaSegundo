@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const guardarEdicion = document.createElement('button');
             guardarEdicion.classList.add("btn","boton-guardar","size-icono-mediano");
-            guardarEdicion.innerHTML = "<i class='fa-solid fa-check icon-secundario'></i>"; 
+            guardarEdicion.innerHTML = "<i class='bi bi-check-circle icon-secundario'></i>"; 
             divFrase.appendChild(guardarEdicion);
 
             const cancelarEdicion = document.createElement('button');
             cancelarEdicion.classList.add("btn","boton-edicion","size-icono-mediano");
-            cancelarEdicion.innerHTML = "<i class='fa-solid fa-xmark icon-secundario'></i>"; 
+            cancelarEdicion.innerHTML = "<i class='bi bi-x-circle icon-secundario'></i>"; 
             divFrase.appendChild(cancelarEdicion);
 
             guardarEdicion.addEventListener('click', function() {
