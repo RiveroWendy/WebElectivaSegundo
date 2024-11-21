@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadContrastConfig = () => {
         const savedContrastConfig = localStorage.getItem("contrastConfig");
         if (savedContrastConfig) {
-            document.documentElement.setAttribute("data-theme", savedContrastConfig);
+            document.body.setAttribute("data-theme", savedContrastConfig);
             if (contrastSelect) contrastSelect.value = savedContrastConfig;
         }
     };
