@@ -101,14 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
     loadFontConfig();
     loadContrastConfig();
 
-    if (contrastSelect) {
-        contrastSelect.addEventListener("change", () => {
-            const selectedTheme = contrastSelect.value;
-            if (selectedTheme === "" || selectedTheme === "light") {
-                document.documentElement.removeAttribute("data-theme");
-            } else {
-                document.documentElement.setAttribute("data-theme", selectedTheme); 
-            }
-        });
-    }
+    // if (contrastSelect) {
+    //     contrastSelect.addEventListener("change", () => {
+    //         const selectedTheme = contrastSelect.value;
+    //         if (selectedTheme === "" || selectedTheme === "light") {
+    //             document.documentElement.removeAttribute("data-theme");
+    //         } else {
+    //             document.documentElement.setAttribute("data-theme", selectedTheme); 
+    //         }
+    //     });
+    // }
 });

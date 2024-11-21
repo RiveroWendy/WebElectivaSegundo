@@ -56,19 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // CONSTRASTE
-    selectConstraste.addEventListener("change", function() {
-        const selectedContrast = selectConstraste.value;
+    // selectConstraste.addEventListener("change", function() {
+    //     const selectedContrast = selectConstraste.value;
 
-        localStorage.setItem("contrastConfig", selectedContrast);
+    //     //localStorage.setItem("contrastConfig", selectedContrast);
 
-        if (selectedContrast === "" || selectedContrast === "light") {
-            document.documentElement.removeAttribute("data-theme");
-        } else if (selectedContrast === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-        } else if (selectedContrast === "high-contrast") {
-            document.documentElement.setAttribute("data-theme", "high-contrast");
-        }
-    });
+    //     if (selectedContrast === "" || selectedContrast === "light") {
+    //         document.documentElement.removeAttribute("data-theme");
+    //     } else if (selectedContrast === "dark") {
+    //         document.documentElement.setAttribute("data-theme", "dark");
+    //     } else if (selectedContrast === "high-contrast") {
+    //         document.documentElement.setAttribute("data-theme", "high-contrast");
+    //     }
+    // });
 
 
 });
