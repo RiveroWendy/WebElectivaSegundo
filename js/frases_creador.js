@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     inputFrase.replaceWith(fraseP); 
                     fraseP.textContent = nuevaFrase; 
                     guardarEdicion.remove(); 
+                    cancelarEdicion.remove(); 
                 }
             });
 
