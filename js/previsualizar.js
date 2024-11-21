@@ -60,17 +60,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 return "16px"; // Valor por defecto
         }
     };
-
+    const showSaveAlert = () => {
+        const alert = document.getElementById("saveAlert");
+        if (alert) {
+            alert.classList.remove("d-none"); // Muestra la alerta
+            setTimeout(() => {
+                alert.classList.add("d-none"); // Oculta la alerta después de 3 segundos
+            }, 3000);
+        }
+    };
     const saveConfig = () => {
         saveFontConfig();
         saveContrastConfig();
+        showSaveAlert();
     };
 
     if (saveButton) {
         saveButton.addEventListener("click", () => {
             saveConfig();
+            loadFontConfig();
+            loadContrastConfig();
         });
-    }
+    }    
 
     if (fontSelect) {
         fontSelect.addEventListener("change", () => {
@@ -98,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 document.documentElement.setAttribute("data-theme", selectedTheme); 
             }
-            saveConfig(); 
         });
     }
 });

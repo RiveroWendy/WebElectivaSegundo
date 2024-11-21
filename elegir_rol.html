@@ -56,6 +56,7 @@
 
     <!-- Modal de Configuración -->
     <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configModalLabel" aria-hidden="true">
+        
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -124,7 +125,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btn-guardar" class="btn btn-primary" data-bs-dismiss="modal">Guardar Cambios</button>
+                    <button type="button" id="btn-guardar" class="btn btn-primary">Guardar Cambios</button>
+                    <div id="saveAlert" class="alert alert-success d-none" role="alert">
+                        ¡Los cambios se han guardado con éxito!
+                    </div>                    
                 </div>
             </div>
         </div>
