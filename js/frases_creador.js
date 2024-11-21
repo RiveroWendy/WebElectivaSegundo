@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
             divFrase.replaceChild(inputFrase, fraseP);
             
             const guardarEdicion = document.createElement('button');
-            guardarEdicion.classList.add("btn","btn-outline-light","boton-guardar","size-icono-mediano");
+            guardarEdicion.classList.add("btn","boton-guardar","size-icono-mediano");
             guardarEdicion.innerHTML = "<i class='fa-solid fa-check icon-secundario'></i>"; 
             divFrase.appendChild(guardarEdicion);
 
             const cancelarEdicion = document.createElement('button');
-            cancelarEdicion.classList.add("btn","btn-outline-light","boton-edicion","size-icono-mediano");
+            cancelarEdicion.classList.add("btn","boton-edicion","size-icono-mediano");
             cancelarEdicion.innerHTML = "<i class='fa-solid fa-xmark icon-secundario'></i>"; 
             divFrase.appendChild(cancelarEdicion);
 
