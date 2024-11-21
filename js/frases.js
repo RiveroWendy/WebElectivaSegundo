@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const divFrase = document.createElement('div');
         const fraseP = document.createElement('p');
         const divIcono = document.createElement('div');
-        const iconoParlante = document.createElement('i');
+        const iconoParlante = document.createElement('button');
 
         const savedConfig = JSON.parse(localStorage.getItem("speechConfig"));
 
@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fraseP.textContent = frase;
 
         divIcono.classList.add("m-2", "size-icono-grande", "d-flex", "justify-content-md-end", "alinear-icono");
-        iconoParlante.classList.add("bi", "bi-volume-up-fill");
+        iconoParlante.innerHTML='<i class="bi bi-volume-up-fill icon-secundario"</i>'
+        iconoParlante.classList.add("btn", "size-icono-grande");
     
 
         seccionFrase.appendChild(divFrase);

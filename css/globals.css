@@ -61,6 +61,13 @@ button {
     color: var(--color-icon-principal);
     border: 1px solid var(--color-bordes);
 }
+
+/* button:hover
+{
+    background-color: var(--color-fondo-div) !important;
+    cursor: pointer; 
+}
+ */
 .accordion-button{
     background-color: var(--color-fondo-elementos);
     color: var(--color-icon-principal);
@@ -87,6 +94,8 @@ h1,h2,h3,h4
     color: var(--color-icon-principal) !important;
     cursor: pointer; 
 }
+
+
 
 
 .icon-secundario

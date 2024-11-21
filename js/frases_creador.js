@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const divFrase = document.createElement('div');
         const fraseP = document.createElement('p');
         const divIcono = document.createElement('div');
-        const iconoEditar = document.createElement('i');
-        const iconoEliminar = document.createElement('i');
+        const iconoEditar = document.createElement('button');
+        const iconoEliminar = document.createElement('button');
 
         seccionFrase.classList.add("btn", "btn-primary", "size-categoria", "d-flex", "flex-column", "flex-md-row", "justify-content-between", "p-3", "align-items-md-center", "mt-2");
         divFrase.classList.add("d-flex", "align-items-center");
@@ -49,8 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fraseP.textContent = frase;
 
         divIcono.classList.add("m-2", "d-flex", "justify-content-md-end", "alinear-icono");
-        iconoEditar.classList.add("bi", "bi-pencil", "me-5", "size-icono");
-        iconoEliminar.classList.add("bi", "bi-trash3-fill", "size-icono");
+        iconoEditar.innerHTML= '<i class="bi bi-pencil size-icono icon-secundario"></i>';
+        iconoEditar.classList.add("btn", "me-5");
+        iconoEliminar.innerHTML= '<i class="bi bi-trash3-fill size-icono icon-secundario"></i>';
+        iconoEliminar.classList.add("btn");
 
         seccionFrase.appendChild(divFrase);
         divFrase.appendChild(fraseP);
@@ -122,8 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const guardarFrase = document.getElementById("guardar-frase");
         const divBuscador = document.getElementById("div-buscador");
         divBuscador.classList.add("d-none");
+        const nuevaFraseInput = document.getElementById("input-frase");
 
         guardarFrase.addEventListener("click", function() {
+
             const nuevaFraseInput = document.getElementById("input-frase");
             const nuevaFrase = nuevaFraseInput.value.trim();
 
@@ -137,6 +141,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             divBuscador.classList.remove("d-none");
             divInput.classList.add("d-none");
+            
+        });
+
+        nuevaFraseInput.addEventListener("keydown", function(e) {
+            if(e.key === "Enter")
+            {
+            const nuevaFraseInput = document.getElementById("input-frase");
+            const nuevaFrase = nuevaFraseInput.value.trim();
+
+            if (nuevaFrase) {
+                frasesCategoria.push(nuevaFrase);
+                agregarFrase(nuevaFrase, document.getElementById('frases-container'));
+                nuevaFraseInput.value = '';
+
+                localStorage.setItem(nombreCat, JSON.stringify(frasesCategoria));
+            }
+
+            divBuscador.classList.remove("d-none");
+            divInput.classList.add("d-none");
+            }
         });
     });
 
