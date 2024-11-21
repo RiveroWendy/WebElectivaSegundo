@@ -3,12 +3,15 @@
     --color-fondo: #ffffff;
     --color-texto-principal: #000000;
     --color-texto-secundario: #333;
-    --color-fondo-elementos: #F5F5F5;
+    --color-fondo-elementos: #ffffff;
     --color-fondo-div: #0d6efd;
     --color-icono:  #212121;
-    --color-bordes: #212121;
+    --color-bordes: #dee2e6;
     --color-enlaces: #2600ff;
     --color-hover: #F5F5F5;
+    --color-placerholder: #333;
+    --color-icon-secundario: #ffffff;
+    --color-icon-principal: #000000;
 }
 
   /* Modo Oscuro */
@@ -22,6 +25,9 @@
     --color-bordes: #333333;
     --color-enlaces: #2600ff;
     --color-hover: #1E1E1E;
+    --color-placerholder: #B3B3B3;
+    --color-icon-secundario: #ffffff;
+    --color-icon-principal: #B3B3B3;
 }
 
   /* Modo Alto Contraste */
@@ -35,6 +41,9 @@
     --color-bordes: #FFFF00;
     --color-enlaces: #FFFFFF;
     --color-hover: #FFFF00;
+    --color-placerholder: #18d0ff;
+    --color-icon-secundario: #ffffff;
+    --color-icon-principal: #FFFF00;
 }
 
 
@@ -43,24 +52,23 @@ body {
     color: var(--color-texto-principal) !important;
 }
 
-/* .btn-primary {
-    background-color: var(--color-fondo-div)  !important;
-    color: var(--color-texto-principal) !important;
-} */
-
 
 h1,h2,h3,h4
 {
     color: var(--color-texto-principal) !important;
 }
 
+.icon-principal
+{
+    color: var(--color-icon-principal) !important;
+    cursor: pointer; 
+}
 
-button {
-/*  background-color: var(--color-fondo-elementos) !important; */
-/*     border-radius: 10px;
-    color: var(--color-texto-principal) !important;
-*/
-    cursor: pointer;  
+
+.icon-secundario
+{
+    color: var(--color-icon-secundario) !important;
+    cursor: pointer; 
 }
 
 
@@ -73,7 +81,7 @@ button {
 
 } */
 
-input
+#input-busqueda
 {
     background-color: var(--color-fondo-principal)  !important;
     color: var(--color-texto-hover) !important;
@@ -82,9 +90,8 @@ input
 
 input::placeholder
 {
-    color: var(--color-texto-hover) !important;
+    color: var(--color-placerholder) !important;
 }
-
 
 .card{
     background-color: var(--color-fondo)  !important;
@@ -122,5 +129,5 @@ select
 {
     background-color: var(--color-fondo-elementos)  !important;
     color: var(--color-texto-secundario) !important;
-    border: 2px solid var(--color-bordes) !important;
+    border: 1px solid var(--color-bordes) !important;
 }

@@ -81,8 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const guardarEdicion = document.createElement('button');
             guardarEdicion.classList.add("btn","btn-outline-light","boton-guardar","size-icono-mediano");
-            guardarEdicion.innerHTML = "<i class='fa-solid fa-check'></i>";
+            guardarEdicion.innerHTML = "<i class='fa-solid fa-check icon-secundario'></i>"; 
             divFrase.appendChild(guardarEdicion);
+
+            const cancelarEdicion = document.createElement('button');
+            cancelarEdicion.classList.add("btn","btn-outline-light","boton-edicion","size-icono-mediano");
+            cancelarEdicion.innerHTML = "<i class='fa-solid fa-xmark icon-secundario'></i>"; 
+            divFrase.appendChild(cancelarEdicion);
 
             guardarEdicion.addEventListener('click', function() {
                 const nuevaFrase = inputFrase.value.trim();
@@ -96,6 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     fraseP.textContent = nuevaFrase; 
                     guardarEdicion.remove(); 
                 }
+            });
+
+            cancelarEdicion.addEventListener('click', function() {
+                
+                    inputFrase.replaceWith(fraseP); 
+                    guardarEdicion.remove(); 
+                    cancelarEdicion.remove(); 
+                
             });
         });
     }
