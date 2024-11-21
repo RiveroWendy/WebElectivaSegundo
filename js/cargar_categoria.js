@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Función para manejar la selección de categorías
-function seleccionarCategoria(nombre) {
+/* function seleccionarCategoria(nombre) {
     alert(`Seleccionaste la categoría: ${nombre}`);
 }
+ */

@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         iconoEliminar.addEventListener('click', function() {
+            if(confirm("¿Estás seguro de eliminar esta frase?"))
             seccionFrase.remove();
             const index = frasesCategoria.indexOf(frase);
             if (index >= 0) {
